@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Welcome - Second";
+    <link href="~/css/welcomeslides.css" rel="stylesheet" />
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="Slide-container">
+            <div class="test-div">
+                <a href="@Url.Action("Index", "FirstSlide")" class="to-first">
+                    <div class="btn-circle">
+                        <div class="left-arrow"></div>
+                    </div>
+                </a>
+                <a href="@Url.Action("Index", "ThirdSlide")" class="to-third">
+                    <div class="btn-circle">
+                        <div class="right-arrow"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="Slide-outer">
+                <div class="Slide-inner">
+                    <h1 class="Slide-header">Easy Track Order!</h1>
+                    <div class="Slide-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam optio consequuntur ducimus ea!</div>
+                    <div class="d-flex justify-content-center">
+                        <a href="@Url.Action("Index", "Login")" class="btn btn-primary Slide-button">GET STARTED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

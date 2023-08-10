@@ -1,0 +1,46 @@
+﻿@model List<CartItemViewModel>
+@{
+    ViewData["Title"] = "Your Cart";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Your Cart</h2>
+
+    @if (Model.Any())
+    {
+        decimal grandTotal = 0;
+        foreach (var cartItem in Model)
+        {
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="@cartItem.ImageUrl" alt="@cartItem.ProductTitle" class="img-fluid">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h5 class="card-title">@cartItem.ProductTitle</h5>
+                            <p>Price: $@cartItem.Price</p>
+                            <p>Quantity: @cartItem.Quantity</p>
+                            <p>Total: $@(cartItem.Price * cartItem.Quantity)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            grandTotal += cartItem.Price * cartItem.Quantity;
+        }
+
+        <div class="text-center">
+            <h4>Grand Total: $@grandTotal</h4>
+            <a asp-controller="Products" asp-action="Index" class="btn btn-primary">Continue Shopping</a>
+            <a asp-controller="Orders" asp-action="Index" class="btn btn-success ml-2">Checkout</a>
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+        <p>Your cart is empty.</p>
+            <a asp-controller="Products" asp-action="Index" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    }
+</div>

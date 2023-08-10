@@ -1,0 +1,41 @@
+﻿@model ProductsViewModel
+@{
+    ViewData["Title"] = @Model.Title;
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Model.ImageUrl" alt="Product Image" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <div class="float-right">
+                <a href="@Url.Action("Index", "Products")" class="text-dark">
+                    <i class="fas fa-times-circle fa-2x"></i>
+                </a>
+            </div>
+            <h1>@Model.Title</h1>
+            <h4>
+                <div class="price h4 text-primary font-weight-bold">
+                    $@Model.Price
+                </div>
+            </h4>
+            <p>@Model.Description📖</p>
+            <div class="my-3">
+                <span class="mr-2">Rating: @Model.Rating/5✨</span>
+            </div>
+            <p>@Model.ProductType.ToString() Product🧷</p>
+            <div class="mt-3">
+                <form method="post" asp-controller="Products" asp-action="AddToCart" id="addToCartForm">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <div class="input-group">
+                        <input type="number" name="quantity" class="form-control" value="1" />
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

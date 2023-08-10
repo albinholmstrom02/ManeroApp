@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Frontend.ViewModels.ProductsViewModel>
+@inject IHttpContextAccessor _contextAccessor;
+@{
+    ViewData["Title"] = "Home";
+}
+    <div>
+        <header class="bg-dark text-white">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md-3">
+                        <h2 class="mb-0">Manero</h2>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="@Url.Action("Index", "Cart")" class="btn btn-info">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container mt-5">
+            <div class="row">
+                @foreach (var product in Model)
+                {
+                    if(product.ProductType.ToString() == "Shirts")
+                    {
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="@product.ImageUrl" alt="@product.Title" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.Title</h5>
+                                <p class="card-text">@product.Description</p>
+                                <div class="rating">
+                                    <span>Rating: @product.Rating/5✨</span>
+                                </div>
+                                <div class="price h4 text-primary font-weight-bold">
+                                    $@product.Price
+                                </div>
+                                <div class="mt-3">
+                                    <a href="Products/Details/@product.Id" class="btn btn-secondary btn-block">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                @foreach (var product in Model)
+                {
+                    if (product.ProductType.ToString() == "Pants")
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="@product.ImageUrl" alt="@product.Title" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">@product.Title</h5>
+                                    <p class="card-text">@product.Description</p>
+                                    <div class="rating">
+                                        <span>Rating: @product.Rating/5✨</span>
+                                    </div>
+                                    <div class="price h4 text-primary font-weight-bold">
+                                        $@product.Price
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="Products/Details/@product.Id" class="btn btn-secondary btn-block">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                @foreach (var product in Model)
+                {
+                    if (product.ProductType.ToString() == "Accessories")
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="@product.ImageUrl" alt="@product.Title" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">@product.Title</h5>
+                                    <p class="card-text">@product.Description</p>
+                                    <div class="rating">
+                                        <span>Rating: @product.Rating/5✨</span>
+                                    </div>
+                                    <div class="price h4 text-primary font-weight-bold">
+                                        $@product.Price
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="Products/Details/@product.Id" class="btn btn-secondary btn-block">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                @foreach (var product in Model)
+                {
+                    if (product.ProductType.ToString() == "Shoes")
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="@product.ImageUrl" alt="@product.Title" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">@product.Title</h5>
+                                    <p class="card-text">@product.Description</p>
+                                    <div class="rating">
+                                        <span>Rating: @product.Rating/5✨</span>
+                                    </div>
+                                    <div class="price h4 text-primary font-weight-bold">
+                                        $@product.Price
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="Products/Details/@product.Id" class="btn btn-secondary btn-block">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+}

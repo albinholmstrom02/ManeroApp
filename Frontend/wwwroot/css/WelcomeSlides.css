@@ -1,0 +1,164 @@
+﻿.Slide-container {
+    position: absolute;
+    overflow: hidden;
+    background-color: lightblue;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Slide-outer {
+    position: absolute;
+    border: solid white;
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Slide-inner {
+    background-color: white;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Slide-header {
+    font-size: 40px;
+    width: 200px;
+    text-align: center;
+}
+
+.Slide-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.Slide-header {
+    font-size: 40px;
+    width: 250px
+}
+
+.Slide-info {
+    padding: 40px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.Slide-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    width: 350px;
+    height: 60px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.to-first,
+.to-second,
+.to-third,
+.fill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.right-arrow {
+    width: 50%;
+    height: 50%;
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    transform: rotate(45deg);
+}
+
+.left-arrow {
+    width: 50%;
+    height: 50%;
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    transform: rotate(-45deg);
+}
+
+.btn-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid grey;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    opacity: 0.8;
+}
+
+    .btn-circle:hover {
+        opacity: 1;
+    }
+
+.test-div {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+@media (max-width: 768px) {
+    .outer {
+        width: 150px;
+        height: 150px;
+    }
+
+    .inner {
+        width: 115px;
+        height: 115px;
+    }
+
+    .manero {
+        font-size: 60px;
+    }
+
+    .firstSlide-outer {
+        margin-top: 300px;
+    }
+
+    .Slide-outer {
+        width: 400px;
+        height: 400px;
+        margin-top: 280px;
+    }
+
+    .Slide-inner {
+        width: 350px;
+        height: 350px;
+    }
+
+    .Slide-button {
+        width: 200px;
+        height: 45px;
+    }
+
+    .Slide-info {
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    .Slide-header {
+        font-size: 20px;
+        width: 150px;
+    }
+}
